@@ -1,0 +1,31 @@
+{
+  "os":  "Windows-11-10.0.26100-SP0",
+  "python":  "CPython 3.12.4",
+  "startedAt":  "2025-03-05T04:40:11.428161Z",
+  "program":  "c:\\Users\\Amar\\Desktop\\MTech\\2nd sem\\DL\\assign_1\\da6401_assignment1\\wan.py",
+  "codePath":  "wan.py",
+  "git":  {
+    "remote":  "https://github.com/amar-at-iitm/da6401_assignment1",
+    "commit":  "2bf469d7c680ec8b90a6f9c6de1c9ced10099eca"
+  },
+  "email":  "ma24m002@smail.iitm.ac.in",
+  "root":  "C:\\Users\\Amar\\Desktop\\MTech\\2nd sem\\DL\\assign_1\\da6401_assignment1",
+  "host":  "Amar-pc",
+  "executable":  "C:\\Users\\Amar\\anaconda3\\python.exe",
+  "codePathLocal":  "wan.py",
+  "cpu_count":  14,
+  "cpu_count_logical":  20,
+  "disk":  {
+    "/":  {
+      "total":  "510745636864",
+      "used":  "187724214272"
+    }
+  },
+  "memory":  {
+    "total":  "16852705280"
+  },
+  "cpu":  {
+    "count":  14,
+    "countLogical":  20
+  }
+}

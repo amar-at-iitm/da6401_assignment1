@@ -1,0 +1,30 @@
+2025-03-05 10:10:11,376 INFO    MainThread:21228 [wandb_setup.py:_flush():67] Current SDK version is 0.19.7
+2025-03-05 10:10:11,377 INFO    MainThread:21228 [wandb_setup.py:_flush():67] Configure stats pid to 21228
+2025-03-05 10:10:11,377 INFO    MainThread:21228 [wandb_setup.py:_flush():67] Loading settings from C:\Users\Amar\.config\wandb\settings
+2025-03-05 10:10:11,377 INFO    MainThread:21228 [wandb_setup.py:_flush():67] Loading settings from C:\Users\Amar\Desktop\MTech\2nd sem\DL\assign_1\da6401_assignment1\wandb\settings
+2025-03-05 10:10:11,377 INFO    MainThread:21228 [wandb_setup.py:_flush():67] Loading settings from environment variables
+2025-03-05 10:10:11,377 INFO    MainThread:21228 [wandb_init.py:setup_run_log_directory():647] Logging user logs to C:\Users\Amar\Desktop\MTech\2nd sem\DL\assign_1\da6401_assignment1\wandb\run-20250305_101011-tvsf0yp6\logs\debug.log
+2025-03-05 10:10:11,377 INFO    MainThread:21228 [wandb_init.py:setup_run_log_directory():648] Logging internal logs to C:\Users\Amar\Desktop\MTech\2nd sem\DL\assign_1\da6401_assignment1\wandb\run-20250305_101011-tvsf0yp6\logs\debug-internal.log
+2025-03-05 10:10:11,377 INFO    MainThread:21228 [wandb_init.py:init():761] calling init triggers
+2025-03-05 10:10:11,377 INFO    MainThread:21228 [wandb_init.py:init():766] wandb.init called with sweep_config: {}
+config: {'learning_rate': 0.02, 'architecture': 'CNN', 'dataset': 'CIFAR-100', 'epochs': 10, '_wandb': {}}
+2025-03-05 10:10:11,377 INFO    MainThread:21228 [wandb_init.py:init():784] starting backend
+2025-03-05 10:10:11,377 INFO    MainThread:21228 [wandb_init.py:init():788] sending inform_init request
+2025-03-05 10:10:11,427 INFO    MainThread:21228 [backend.py:_multiprocessing_setup():97] multiprocessing start_methods=spawn, using: spawn
+2025-03-05 10:10:11,428 INFO    MainThread:21228 [wandb_init.py:init():803] backend started and connected
+2025-03-05 10:10:11,428 INFO    MainThread:21228 [wandb_init.py:init():896] updated telemetry
+2025-03-05 10:10:11,452 INFO    MainThread:21228 [wandb_init.py:init():920] communicating run to backend with 90.0 second timeout
+2025-03-05 10:10:11,938 INFO    MainThread:21228 [wandb_init.py:init():995] starting run threads in backend
+2025-03-05 10:10:12,508 INFO    MainThread:21228 [wandb_run.py:_console_start():2377] atexit reg
+2025-03-05 10:10:12,508 INFO    MainThread:21228 [wandb_run.py:_redirect():2227] redirect: wrap_raw
+2025-03-05 10:10:12,508 INFO    MainThread:21228 [wandb_run.py:_redirect():2292] Wrapping output streams.
+2025-03-05 10:10:12,508 INFO    MainThread:21228 [wandb_run.py:_redirect():2317] Redirects installed.
+2025-03-05 10:10:12,511 INFO    MainThread:21228 [wandb_init.py:init():1037] run started, returning control to user process
+2025-03-05 10:10:12,512 INFO    MainThread:21228 [wandb_run.py:_finish():2112] finishing run amar74384-iit-madras/DA6401_assign_1/tvsf0yp6
+2025-03-05 10:10:12,512 INFO    MainThread:21228 [wandb_run.py:_atexit_cleanup():2342] got exitcode: 0
+2025-03-05 10:10:12,512 INFO    MainThread:21228 [wandb_run.py:_restore():2324] restore
+2025-03-05 10:10:12,512 INFO    MainThread:21228 [wandb_run.py:_restore():2330] restore done
+2025-03-05 10:10:15,587 INFO    MsgRouterThr:21228 [mailbox.py:close():115] Closing mailbox, abandoning 1 handles.
+2025-03-05 10:10:15,588 INFO    MainThread:21228 [wandb_run.py:_footer_history_summary_info():3958] rendering history
+2025-03-05 10:10:15,589 INFO    MainThread:21228 [wandb_run.py:_footer_history_summary_info():3990] rendering summary
+2025-03-05 10:10:15,591 INFO    MainThread:21228 [wandb_run.py:_footer_sync_info():3919] logging synced files

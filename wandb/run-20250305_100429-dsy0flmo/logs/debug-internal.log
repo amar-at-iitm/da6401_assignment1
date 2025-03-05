@@ -1,0 +1,17 @@
+{"time":"2025-03-05T10:04:29.1118471+05:30","level":"INFO","msg":"stream: starting","core version":"0.19.7","symlink path":"C:\\Users\\Amar\\Desktop\\MTech\\2nd sem\\DL\\assign_1\\da6401_assignment1\\wandb\\run-20250305_100429-dsy0flmo\\logs\\debug-core.log"}
+{"time":"2025-03-05T10:04:29.6439415+05:30","level":"INFO","msg":"created new stream","id":"dsy0flmo"}
+{"time":"2025-03-05T10:04:29.6439415+05:30","level":"INFO","msg":"stream: started","id":"dsy0flmo"}
+{"time":"2025-03-05T10:04:29.6439415+05:30","level":"INFO","msg":"writer: Do: started","stream_id":"dsy0flmo"}
+{"time":"2025-03-05T10:04:29.6439415+05:30","level":"INFO","msg":"sender: started","stream_id":"dsy0flmo"}
+{"time":"2025-03-05T10:04:29.6439415+05:30","level":"INFO","msg":"handler: started","stream_id":"dsy0flmo"}
+{"time":"2025-03-05T10:04:29.9474836+05:30","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/graphql"}
+{"time":"2025-03-05T10:04:29.948162+05:30","level":"ERROR","msg":"sender: upsertRun:","error":"failed to upsert bucket: returned error 404 Not Found: {\"errors\":[{\"message\":\"entity my-awesome-team-name not found during upsertBucket\",\"path\":[\"upsertBucket\"]}],\"data\":{\"upsertBucket\":null}}"}
+{"time":"2025-03-05T10:04:29.9625208+05:30","level":"INFO","msg":"stream: closing","id":"dsy0flmo"}
+{"time":"2025-03-05T10:04:29.9633181+05:30","level":"ERROR","msg":"sender: upsertConfig: RunRecord is nil"}
+{"time":"2025-03-05T10:04:30.2666097+05:30","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/graphql"}
+{"time":"2025-03-05T10:04:30.2666097+05:30","level":"ERROR","msg":"runfiles: CreateRunFiles returned error: returned error 404 Not Found: {\"errors\":[{\"message\":\"entity my-awesome-team-name not found during createRunFiles\",\"path\":[\"createRunFiles\"]}],\"data\":{\"createRunFiles\":null}}"}
+{"time":"2025-03-05T10:04:30.2678004+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-05T10:04:30.2678004+05:30","level":"INFO","msg":"handler: closed","stream_id":"dsy0flmo"}
+{"time":"2025-03-05T10:04:30.2678004+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":"dsy0flmo"}
+{"time":"2025-03-05T10:04:30.2678004+05:30","level":"INFO","msg":"sender: closed","stream_id":"dsy0flmo"}
+{"time":"2025-03-05T10:04:30.2684481+05:30","level":"INFO","msg":"stream: closed","id":"dsy0flmo"}
