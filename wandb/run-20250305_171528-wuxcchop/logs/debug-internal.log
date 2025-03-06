@@ -1,0 +1,16 @@
+{"time":"2025-03-05T17:15:28.7726035+05:30","level":"INFO","msg":"stream: starting","core version":"0.19.7","symlink path":"C:\\Users\\Amar\\Desktop\\MTech\\2nd sem\\DL\\assign_1\\da6401_assignment1\\wandb\\run-20250305_171528-wuxcchop\\logs\\debug-core.log"}
+{"time":"2025-03-05T17:15:28.8817111+05:30","level":"INFO","msg":"created new stream","id":"wuxcchop"}
+{"time":"2025-03-05T17:15:28.8817111+05:30","level":"INFO","msg":"stream: started","id":"wuxcchop"}
+{"time":"2025-03-05T17:15:28.8817111+05:30","level":"INFO","msg":"writer: Do: started","stream_id":"wuxcchop"}
+{"time":"2025-03-05T17:15:28.8817111+05:30","level":"INFO","msg":"handler: started","stream_id":"wuxcchop"}
+{"time":"2025-03-05T17:15:28.8822155+05:30","level":"INFO","msg":"sender: started","stream_id":"wuxcchop"}
+{"time":"2025-03-05T17:15:29.3248474+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-05T17:15:45.0416097+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-05T17:15:45.0421332+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-05T17:15:46.0434347+05:30","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.6321043},{"desc":"uploading config.yaml","runtime_seconds":0.262319,"progress":"699B/699B"}],"total_operations":2}}
+{"time":"2025-03-05T17:15:46.7341894+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-05T17:15:48.0524711+05:30","level":"INFO","msg":"stream: closing","id":"wuxcchop"}
+{"time":"2025-03-05T17:15:48.0524711+05:30","level":"INFO","msg":"handler: closed","stream_id":"wuxcchop"}
+{"time":"2025-03-05T17:15:48.0524711+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":"wuxcchop"}
+{"time":"2025-03-05T17:15:48.0524711+05:30","level":"INFO","msg":"sender: closed","stream_id":"wuxcchop"}
+{"time":"2025-03-05T17:15:48.0524711+05:30","level":"INFO","msg":"stream: closed","id":"wuxcchop"}

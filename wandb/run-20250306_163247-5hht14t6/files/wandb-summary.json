@@ -1,0 +1,1 @@
+{"_timestamp":1.741258999620165e+09,"_wandb":{"runtime":32},"_runtime":32.4822117,"_step":4,"epoch":4,"loss":0.829917756975233,"val_acc":{"max":0.7856},"best_val_acc":0.7856}

@@ -1,0 +1,47 @@
+_wandb:
+    value:
+        cli_version: 0.19.7
+        m:
+            - "1": val_acc
+              "6":
+                - 3
+              "7":
+                - 2
+        python_version: 3.12.4
+        t:
+            "1":
+                - 55
+            "2":
+                - 55
+            "3":
+                - 2
+                - 7
+                - 14
+                - 23
+                - 55
+                - 63
+            "4": 3.12.4
+            "5": 0.19.7
+            "8":
+                - 3
+                - 5
+            "12": 0.19.7
+            "13": windows-amd64
+activation:
+    value: tanh
+batch_size:
+    value: 16
+epochs:
+    value: 5
+hidden_layers:
+    value: 3
+hidden_size:
+    value: 64
+learning_rate:
+    value: 0.001
+optimizer:
+    value: nesterov
+weight_decay:
+    value: 0
+weight_init:
+    value: random

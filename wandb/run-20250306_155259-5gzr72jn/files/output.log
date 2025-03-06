@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "c:\Users\Amar\Desktop\MTech\2nd sem\DL\assign_1\da6401_assignment1\train.py", line 193, in <module>
+    train()
+  File "c:\Users\Amar\Desktop\MTech\2nd sem\DL\assign_1\da6401_assignment1\train.py", line 185, in train
+    (x_train, y_train), (x_val, y_val), (x_test, y_test) = load_data(args.dataset)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 3, got 2)

@@ -1,0 +1,15 @@
+{"time":"2025-03-06T15:48:52.496939+05:30","level":"INFO","msg":"stream: starting","core version":"0.19.7","symlink path":"C:\\Users\\Amar\\Desktop\\MTech\\2nd sem\\DL\\assign_1\\da6401_assignment1\\wandb\\run-20250306_154852-rvpumhvf\\logs\\debug-core.log"}
+{"time":"2025-03-06T15:48:52.6314771+05:30","level":"INFO","msg":"created new stream","id":"rvpumhvf"}
+{"time":"2025-03-06T15:48:52.6314771+05:30","level":"INFO","msg":"stream: started","id":"rvpumhvf"}
+{"time":"2025-03-06T15:48:52.6374785+05:30","level":"INFO","msg":"handler: started","stream_id":"rvpumhvf"}
+{"time":"2025-03-06T15:48:52.6374785+05:30","level":"INFO","msg":"sender: started","stream_id":"rvpumhvf"}
+{"time":"2025-03-06T15:48:52.6409863+05:30","level":"INFO","msg":"writer: Do: started","stream_id":"rvpumhvf"}
+{"time":"2025-03-06T15:48:53.1193552+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-06T15:48:54.2857321+05:30","level":"INFO","msg":"stream: closing","id":"rvpumhvf"}
+{"time":"2025-03-06T15:48:54.2857321+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-06T15:48:54.2912555+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-06T15:48:56.3321787+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-06T15:48:56.7435874+05:30","level":"INFO","msg":"handler: closed","stream_id":"rvpumhvf"}
+{"time":"2025-03-06T15:48:56.7435874+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":"rvpumhvf"}
+{"time":"2025-03-06T15:48:56.7435874+05:30","level":"INFO","msg":"sender: closed","stream_id":"rvpumhvf"}
+{"time":"2025-03-06T15:48:56.7435874+05:30","level":"INFO","msg":"stream: closed","id":"rvpumhvf"}

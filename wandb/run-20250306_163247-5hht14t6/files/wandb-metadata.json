@@ -1,0 +1,31 @@
+{
+  "os":  "Windows-11-10.0.26100-SP0",
+  "python":  "CPython 3.12.4",
+  "startedAt":  "2025-03-06T11:02:47.138818Z",
+  "program":  "c:\\Users\\Amar\\Desktop\\MTech\\2nd sem\\DL\\assign_1\\da6401_assignment1\\wandb1.py",
+  "codePath":  "wandb1.py",
+  "git":  {
+    "remote":  "https://github.com/amar-at-iitm/da6401_assignment1",
+    "commit":  "032c0e49c196ccfe5c6e0ebae6b04e2d612adbce"
+  },
+  "email":  "ma24m002@smail.iitm.ac.in",
+  "root":  "C:\\Users\\Amar\\Desktop\\MTech\\2nd sem\\DL\\assign_1\\da6401_assignment1",
+  "host":  "Amar-pc",
+  "executable":  "C:\\Users\\Amar\\anaconda3\\python.exe",
+  "codePathLocal":  "wandb1.py",
+  "cpu_count":  14,
+  "cpu_count_logical":  20,
+  "disk":  {
+    "/":  {
+      "total":  "510745636864",
+      "used":  "192175509504"
+    }
+  },
+  "memory":  {
+    "total":  "16852705280"
+  },
+  "cpu":  {
+    "count":  14,
+    "countLogical":  20
+  }
+}

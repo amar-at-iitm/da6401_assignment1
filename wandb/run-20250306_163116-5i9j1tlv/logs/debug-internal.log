@@ -1,0 +1,16 @@
+{"time":"2025-03-06T16:31:16.8366441+05:30","level":"INFO","msg":"stream: starting","core version":"0.19.7","symlink path":"C:\\Users\\Amar\\Desktop\\MTech\\2nd sem\\DL\\assign_1\\da6401_assignment1\\wandb\\run-20250306_163116-5i9j1tlv\\logs\\debug-core.log"}
+{"time":"2025-03-06T16:31:17.0139763+05:30","level":"INFO","msg":"created new stream","id":"5i9j1tlv"}
+{"time":"2025-03-06T16:31:17.0139763+05:30","level":"INFO","msg":"stream: started","id":"5i9j1tlv"}
+{"time":"2025-03-06T16:31:17.0144855+05:30","level":"INFO","msg":"writer: Do: started","stream_id":"5i9j1tlv"}
+{"time":"2025-03-06T16:31:17.0155347+05:30","level":"INFO","msg":"handler: started","stream_id":"5i9j1tlv"}
+{"time":"2025-03-06T16:31:17.0160441+05:30","level":"INFO","msg":"sender: started","stream_id":"5i9j1tlv"}
+{"time":"2025-03-06T16:31:17.7417215+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-06T16:31:41.7021295+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-06T16:31:41.7026819+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-06T16:31:42.7188204+05:30","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.6264391,"progress":"174B/174B"},{"desc":"uploading config.yaml","runtime_seconds":0.2954573,"progress":"835B/835B"}],"total_operations":2}}
+{"time":"2025-03-06T16:31:43.4216666+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-06T16:31:44.8014884+05:30","level":"INFO","msg":"stream: closing","id":"5i9j1tlv"}
+{"time":"2025-03-06T16:31:44.8014884+05:30","level":"INFO","msg":"handler: closed","stream_id":"5i9j1tlv"}
+{"time":"2025-03-06T16:31:44.8014884+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":"5i9j1tlv"}
+{"time":"2025-03-06T16:31:44.8024911+05:30","level":"INFO","msg":"sender: closed","stream_id":"5i9j1tlv"}
+{"time":"2025-03-06T16:31:44.8024911+05:30","level":"INFO","msg":"stream: closed","id":"5i9j1tlv"}

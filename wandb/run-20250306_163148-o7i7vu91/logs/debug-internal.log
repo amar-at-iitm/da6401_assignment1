@@ -1,0 +1,16 @@
+{"time":"2025-03-06T16:31:48.6148097+05:30","level":"INFO","msg":"stream: starting","core version":"0.19.7","symlink path":"C:\\Users\\Amar\\Desktop\\MTech\\2nd sem\\DL\\assign_1\\da6401_assignment1\\wandb\\run-20250306_163148-o7i7vu91\\logs\\debug-core.log"}
+{"time":"2025-03-06T16:31:48.7970674+05:30","level":"INFO","msg":"created new stream","id":"o7i7vu91"}
+{"time":"2025-03-06T16:31:48.7970674+05:30","level":"INFO","msg":"stream: started","id":"o7i7vu91"}
+{"time":"2025-03-06T16:31:48.8015963+05:30","level":"INFO","msg":"writer: Do: started","stream_id":"o7i7vu91"}
+{"time":"2025-03-06T16:31:48.8021039+05:30","level":"INFO","msg":"sender: started","stream_id":"o7i7vu91"}
+{"time":"2025-03-06T16:31:48.8027795+05:30","level":"INFO","msg":"handler: started","stream_id":"o7i7vu91"}
+{"time":"2025-03-06T16:31:49.2594677+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-06T16:32:41.8641974+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-06T16:32:41.864709+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-06T16:32:42.8976985+05:30","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.6980782,"progress":"169B/169B"},{"desc":"uploading config.yaml","runtime_seconds":0.2888669,"progress":"837B/837B"}],"total_operations":2}}
+{"time":"2025-03-06T16:32:43.7142014+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-06T16:32:45.0817894+05:30","level":"INFO","msg":"stream: closing","id":"o7i7vu91"}
+{"time":"2025-03-06T16:32:45.0817894+05:30","level":"INFO","msg":"handler: closed","stream_id":"o7i7vu91"}
+{"time":"2025-03-06T16:32:45.0826317+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":"o7i7vu91"}
+{"time":"2025-03-06T16:32:45.0826317+05:30","level":"INFO","msg":"sender: closed","stream_id":"o7i7vu91"}
+{"time":"2025-03-06T16:32:45.0831443+05:30","level":"INFO","msg":"stream: closed","id":"o7i7vu91"}

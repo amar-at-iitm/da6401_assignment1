@@ -1,0 +1,16 @@
+{"time":"2025-03-06T16:28:36.3527946+05:30","level":"INFO","msg":"stream: starting","core version":"0.19.7","symlink path":"C:\\Users\\Amar\\Desktop\\MTech\\2nd sem\\DL\\assign_1\\da6401_assignment1\\wandb\\run-20250306_162836-ucsg4i9b\\logs\\debug-core.log"}
+{"time":"2025-03-06T16:28:36.4875051+05:30","level":"INFO","msg":"created new stream","id":"ucsg4i9b"}
+{"time":"2025-03-06T16:28:36.4875051+05:30","level":"INFO","msg":"stream: started","id":"ucsg4i9b"}
+{"time":"2025-03-06T16:28:36.4890163+05:30","level":"INFO","msg":"writer: Do: started","stream_id":"ucsg4i9b"}
+{"time":"2025-03-06T16:28:36.4890163+05:30","level":"INFO","msg":"handler: started","stream_id":"ucsg4i9b"}
+{"time":"2025-03-06T16:28:36.4890163+05:30","level":"INFO","msg":"sender: started","stream_id":"ucsg4i9b"}
+{"time":"2025-03-06T16:28:37.03243+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-06T16:28:53.1462097+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-06T16:28:53.1467181+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-06T16:28:54.1609155+05:30","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading output.log","runtime_seconds":0.2468908},{"desc":"uploading wandb-summary.json","runtime_seconds":0.2468908,"progress":"176B/176B"}],"total_operations":2}}
+{"time":"2025-03-06T16:28:54.6397077+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-06T16:28:56.0928277+05:30","level":"INFO","msg":"stream: closing","id":"ucsg4i9b"}
+{"time":"2025-03-06T16:28:56.0928277+05:30","level":"INFO","msg":"handler: closed","stream_id":"ucsg4i9b"}
+{"time":"2025-03-06T16:28:56.0928277+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":"ucsg4i9b"}
+{"time":"2025-03-06T16:28:56.0938275+05:30","level":"INFO","msg":"sender: closed","stream_id":"ucsg4i9b"}
+{"time":"2025-03-06T16:28:56.0938275+05:30","level":"INFO","msg":"stream: closed","id":"ucsg4i9b"}

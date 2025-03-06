@@ -1,0 +1,1 @@
+{"loss":2.302961469633752,"val_acc":{"max":0.1592},"best_val_acc":0.1592,"_timestamp":1.7412590858943954e+09,"_runtime":49.2775831,"_step":9,"epoch":9,"_wandb":{"runtime":49}}

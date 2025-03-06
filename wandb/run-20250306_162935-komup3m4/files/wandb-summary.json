@@ -1,0 +1,1 @@
+{"_runtime":31.382875,"_step":4,"epoch":4,"loss":0.2985426632388175,"val_acc":{"max":0.8107},"best_val_acc":0.8107,"_timestamp":1.7412588065916662e+09,"_wandb":{"runtime":31}}
