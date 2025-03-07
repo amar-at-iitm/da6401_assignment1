@@ -1,7 +1,7 @@
 import numpy as np
 import wandb
 from optimizers import optimizers
-
+from sklearn.metrics import confusion_matrix
 
 # Load and Preprocess Fashion-MNIST Dataset
 def load_data(filepath):
@@ -97,6 +97,20 @@ class SGD(Optimizer):
             weights[i] -= self.lr * (gradients_w[i] + self.weight_decay * weights[i])
             biases[i] -= self.lr * gradients_b[i]  # Biases are not regularized
 
+def log_confusion_matrix(x_test, y_test, model_weights, model_biases, activation):
+    # Get model predictions
+    activations, _ = forward_propagation(x_test, model_weights, model_biases, activation)
+    y_pred = np.argmax(activations[-1], axis=1)
+    y_true = np.argmax(y_test, axis=1)
+    
+    # Compute confusion matrix
+    cm = confusion_matrix(y_true, y_pred)
+    
+    # Log confusion matrix to WandB
+    wandb.log({"confusion_matrix": wandb.plot.confusion_matrix(probs=None,
+                                                               y_true=y_true, 
+                                                               preds=y_pred,
+                                                               class_names=[str(i) for i in range(10)])})
 
 # Training Function
 def compute_accuracy(x, y, weights, biases, activation):
@@ -169,8 +183,8 @@ def train():
         val_acc = compute_accuracy(x_val, y_val, weights, biases, config.activation)
 
         wandb.log({"epoch": epoch, "train_loss": train_loss, "train_acc": train_acc, "val_loss": val_loss, "val_acc": val_acc})
-
-
+        # Log confusion matrix after training
+        log_confusion_matrix(x_test, y_test, weights, biases, config.activation)
     return weights, biases
 
 sweep_config = {

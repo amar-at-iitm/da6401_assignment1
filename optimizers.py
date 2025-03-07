@@ -6,18 +6,20 @@ class Optimizer:
         raise NotImplementedError
 
 class SGD(Optimizer):
-    def __init__(self, learning_rate=0.01):
+    def __init__(self, learning_rate=0.01, weight_decay=0.0):
         self.lr = learning_rate
+        self.weight_decay = weight_decay  # L2 Regularization term
     
     def update(self, weights, biases, gradients_w, gradients_b):
         for i in range(len(weights)):
-            weights[i] -= self.lr * gradients_w[i]
-            biases[i] -= self.lr * gradients_b[i]
+            weights[i] -= self.lr * (gradients_w[i] + self.weight_decay * weights[i])
+            biases[i] -= self.lr * gradients_b[i]  # Biases are not regularized
 
 class Momentum(Optimizer):
-    def __init__(self, learning_rate=0.01, momentum=0.9):
+    def __init__(self, learning_rate=0.01, momentum=0.9, weight_decay=0.0):
         self.lr = learning_rate
         self.momentum = momentum
+        self.weight_decay = weight_decay
         self.v_w = None
         self.v_b = None
     
@@ -27,15 +29,16 @@ class Momentum(Optimizer):
             self.v_b = [np.zeros_like(b) for b in biases]
         
         for i in range(len(weights)):
-            self.v_w[i] = self.momentum * self.v_w[i] - self.lr * gradients_w[i]
+            self.v_w[i] = self.momentum * self.v_w[i] - self.lr * (gradients_w[i] + self.weight_decay * weights[i])
             self.v_b[i] = self.momentum * self.v_b[i] - self.lr * gradients_b[i]
             weights[i] += self.v_w[i]
             biases[i] += self.v_b[i]
 
 class Nesterov(Optimizer):
-    def __init__(self, learning_rate=1e-3, momentum=0.9):
+    def __init__(self, learning_rate=1e-3, momentum=0.9, weight_decay=0.0):
         self.lr = learning_rate
         self.momentum = momentum
+        self.weight_decay = weight_decay
         self.v_w = None
         self.v_b = None
     
@@ -48,16 +51,17 @@ class Nesterov(Optimizer):
             lookahead_w = weights[i] - self.momentum * self.v_w[i]
             lookahead_b = biases[i] - self.momentum * self.v_b[i]
             
-            self.v_w[i] = self.momentum * self.v_w[i] - self.lr * gradients_w[i]
+            self.v_w[i] = self.momentum * self.v_w[i] - self.lr * (gradients_w[i] + self.weight_decay * lookahead_w)
             self.v_b[i] = self.momentum * self.v_b[i] - self.lr * gradients_b[i]
             
             weights[i] = lookahead_w + self.v_w[i]
             biases[i] = lookahead_b + self.v_b[i]
 
 class AdaGrad(Optimizer):
-    def __init__(self, learning_rate=1e-2, epsilon=1e-7):
+    def __init__(self, learning_rate=1e-2, epsilon=1e-7, weight_decay=0.0):
         self.lr = learning_rate
         self.epsilon = epsilon
+        self.weight_decay = weight_decay
         self.v_w = None
         self.v_b = None
     
@@ -69,14 +73,15 @@ class AdaGrad(Optimizer):
         for i in range(len(weights)):
             self.v_w[i] += gradients_w[i] ** 2
             self.v_b[i] += gradients_b[i] ** 2
-            weights[i] -= self.lr * gradients_w[i] / (np.sqrt(self.v_w[i]) + self.epsilon)
+            weights[i] -= self.lr * (gradients_w[i] + self.weight_decay * weights[i]) / (np.sqrt(self.v_w[i]) + self.epsilon)
             biases[i] -= self.lr * gradients_b[i] / (np.sqrt(self.v_b[i]) + self.epsilon)
 
 class RMSProp(Optimizer):
-    def __init__(self, learning_rate=1e-3, beta=0.9, epsilon=1e-7):
+    def __init__(self, learning_rate=1e-3, beta=0.9, epsilon=1e-7, weight_decay=0.0):
         self.lr = learning_rate
         self.beta = beta
         self.epsilon = epsilon
+        self.weight_decay = weight_decay
         self.v_w = None
         self.v_b = None
     
@@ -88,16 +93,16 @@ class RMSProp(Optimizer):
         for i in range(len(weights)):
             self.v_w[i] = self.beta * self.v_w[i] + (1 - self.beta) * (gradients_w[i] ** 2)
             self.v_b[i] = self.beta * self.v_b[i] + (1 - self.beta) * (gradients_b[i] ** 2)
-            weights[i] -= self.lr * gradients_w[i] / (np.sqrt(self.v_w[i]) + self.epsilon)
+            weights[i] -= self.lr * (gradients_w[i] + self.weight_decay * weights[i]) / (np.sqrt(self.v_w[i]) + self.epsilon)
             biases[i] -= self.lr * gradients_b[i] / (np.sqrt(self.v_b[i]) + self.epsilon)
 
-
 class Adam(Optimizer):
-    def __init__(self, learning_rate=0.001, beta1=0.9, beta2=0.999, epsilon=1e-8):
+    def __init__(self, learning_rate=0.001, beta1=0.9, beta2=0.999, epsilon=1e-8, weight_decay=0.0):
         self.lr = learning_rate
         self.beta1 = beta1
         self.beta2 = beta2
         self.epsilon = epsilon
+        self.weight_decay = weight_decay
         self.m_w, self.v_w, self.m_b, self.v_b = None, None, None, None
         self.t = 0
    
@@ -116,15 +121,8 @@ class Adam(Optimizer):
             self.m_b[i] = self.beta1 * self.m_b[i] + (1 - self.beta1) * gradients_b[i]
             self.v_b[i] = self.beta2 * self.v_b[i] + (1 - self.beta2) * (gradients_b[i] ** 2)
             
-            m_w_hat = self.m_w[i] / (1 - self.beta1 ** self.t)
-            v_w_hat = self.v_w[i] / (1 - self.beta2 ** self.t)
-            m_b_hat = self.m_b[i] / (1 - self.beta1 ** self.t)
-            v_b_hat = self.v_b[i] / (1 - self.beta2 ** self.t)
-            
-            weights[i] -= self.lr * m_w_hat / (np.sqrt(v_w_hat) + self.epsilon)
-            biases[i] -= self.lr * m_b_hat / (np.sqrt(v_b_hat) + self.epsilon)
-
-
+            weights[i] -= self.lr * (self.m_w[i] / (np.sqrt(self.v_w[i]) + self.epsilon) + self.weight_decay * weights[i])
+            biases[i] -= self.lr * (self.m_b[i] / (np.sqrt(self.v_b[i]) + self.epsilon))
 
 optimizers = {
     "sgd": SGD,
@@ -132,5 +130,5 @@ optimizers = {
     "nestrov": Nesterov,
     "adagrad": AdaGrad,
     "rmsprop": RMSProp,
-    "adam":Adam,
+    "adam": Adam,
 }
