@@ -1,0 +1,31 @@
+{
+  "os":  "Windows-11-10.0.26100-SP0",
+  "python":  "CPython 3.12.4",
+  "startedAt":  "2025-03-07T09:09:14.935316Z",
+  "program":  "c:\\Users\\Amar\\Desktop\\MTech\\2nd sem\\DL\\assign_1\\da6401_assignment1\\code4.py",
+  "codePath":  "code4.py",
+  "git":  {
+    "remote":  "https://github.com/amar-at-iitm/da6401_assignment1",
+    "commit":  "6d5af87bccdcf01846e86aebaabd213d16120a31"
+  },
+  "email":  "ma24m002@smail.iitm.ac.in",
+  "root":  "C:\\Users\\Amar\\Desktop\\MTech\\2nd sem\\DL\\assign_1\\da6401_assignment1",
+  "host":  "Amar-pc",
+  "executable":  "C:\\Users\\Amar\\anaconda3\\python.exe",
+  "codePathLocal":  "code4.py",
+  "cpu_count":  14,
+  "cpu_count_logical":  20,
+  "disk":  {
+    "/":  {
+      "total":  "510745636864",
+      "used":  "186691203072"
+    }
+  },
+  "memory":  {
+    "total":  "16852705280"
+  },
+  "cpu":  {
+    "count":  14,
+    "countLogical":  20
+  }
+}

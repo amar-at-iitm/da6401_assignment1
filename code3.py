@@ -1,4 +1,5 @@
 import numpy as np
+from optimizers import optimizers
 
 # Load and Preprocess Fashion-MNIST Dataset
 def load_data(filepath):
@@ -64,42 +65,7 @@ def backpropagation(activations, z_values, weights, y_true):
     
     return gradients_w, gradients_b
 
-# Optimizers
-class Optimizer:
-    def update(self, weights, biases, gradients_w, gradients_b):
-        raise NotImplementedError
 
-class SGD(Optimizer):
-    def __init__(self, learning_rate=0.01):
-        self.lr = learning_rate
-    
-    def update(self, weights, biases, gradients_w, gradients_b):
-        for i in range(len(weights)):
-            weights[i] -= self.lr * gradients_w[i]
-            biases[i] -= self.lr * gradients_b[i]
-
-class Momentum(Optimizer):
-    def __init__(self, learning_rate=0.01, momentum=0.9):
-        self.lr = learning_rate
-        self.momentum = momentum
-        self.v_w = None
-        self.v_b = None
-    
-    def update(self, weights, biases, gradients_w, gradients_b):
-        if self.v_w is None:
-            self.v_w = [np.zeros_like(w) for w in weights]
-            self.v_b = [np.zeros_like(b) for b in biases]
-        
-        for i in range(len(weights)):
-            self.v_w[i] = self.momentum * self.v_w[i] - self.lr * gradients_w[i]
-            self.v_b[i] = self.momentum * self.v_b[i] - self.lr * gradients_b[i]
-            weights[i] += self.v_w[i]
-            biases[i] += self.v_b[i]
-
-optimizers = {
-    "sgd": SGD,
-    "momentum": Momentum,
-}
 
 # Training Function
 def compute_accuracy(x, y, weights, biases):
@@ -125,6 +91,7 @@ def train_network(x_train, y_train, x_val, y_val, layer_sizes, optimizer_name, e
         
         #loss = -np.mean(np.sum(y_train * np.log(activations[-1] + 1e-8), axis=1))
         train_activations, _ = forward_propagation(x_train, weights, biases)
+        # Cross Entropy loss
         loss = -np.mean(np.sum(y_train * np.log(train_activations[-1] + 1e-8), axis=1))
 
         val_acc = compute_accuracy(x_val, y_val, weights, biases)

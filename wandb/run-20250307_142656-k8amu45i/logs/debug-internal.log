@@ -1,0 +1,16 @@
+{"time":"2025-03-07T14:26:56.3329672+05:30","level":"INFO","msg":"stream: starting","core version":"0.19.7","symlink path":"C:\\Users\\Amar\\Desktop\\MTech\\2nd sem\\DL\\assign_1\\da6401_assignment1\\wandb\\run-20250307_142656-k8amu45i\\logs\\debug-core.log"}
+{"time":"2025-03-07T14:26:56.4402566+05:30","level":"INFO","msg":"created new stream","id":"k8amu45i"}
+{"time":"2025-03-07T14:26:56.4407597+05:30","level":"INFO","msg":"handler: started","stream_id":"k8amu45i"}
+{"time":"2025-03-07T14:26:56.4407597+05:30","level":"INFO","msg":"stream: started","id":"k8amu45i"}
+{"time":"2025-03-07T14:26:56.4407597+05:30","level":"INFO","msg":"sender: started","stream_id":"k8amu45i"}
+{"time":"2025-03-07T14:26:56.4407597+05:30","level":"INFO","msg":"writer: Do: started","stream_id":"k8amu45i"}
+{"time":"2025-03-07T14:26:56.8073169+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-07T14:27:49.5735935+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-07T14:27:49.5746765+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-07T14:27:50.5813219+05:30","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.385318,"progress":"143B/143B"},{"desc":"uploading config.yaml","runtime_seconds":0.0709885,"progress":"698B/698B"}],"total_operations":2}}
+{"time":"2025-03-07T14:27:50.865901+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-07T14:27:52.2003013+05:30","level":"INFO","msg":"stream: closing","id":"k8amu45i"}
+{"time":"2025-03-07T14:27:52.2003013+05:30","level":"INFO","msg":"handler: closed","stream_id":"k8amu45i"}
+{"time":"2025-03-07T14:27:52.2003013+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":"k8amu45i"}
+{"time":"2025-03-07T14:27:52.2003013+05:30","level":"INFO","msg":"sender: closed","stream_id":"k8amu45i"}
+{"time":"2025-03-07T14:27:52.2008092+05:30","level":"INFO","msg":"stream: closed","id":"k8amu45i"}

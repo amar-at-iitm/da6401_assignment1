@@ -127,7 +127,7 @@ def compute_accuracy(x, y, weights, biases, activation):
     return np.mean(predictions == y_labels)
 
 def train():
-    wandb.init(entity="amar74384-iit-madras", project="DA6401_assign_1")
+    wandb.init(entity="amar74384-iit-madras", project="DA6401_assign_2")
     config = wandb.config
     
     (x_train, y_train), (x_test, y_test) = load_data('fashion-mnist.npz')
@@ -138,11 +138,6 @@ def train():
     weights, biases = initialize_network(layer_sizes, config.weight_init)
     optimizer = SGD(config.learning_rate)
     
-
-    wandb.define_metric("val_acc", summary="max")
-    best_val_acc = 0  # Track best validation accuracy
-
-
     for epoch in range(config.epochs):
         indices = np.random.permutation(x_train.shape[0])
         x_train, y_train = x_train[indices], y_train[indices]
@@ -156,15 +151,9 @@ def train():
         
         #loss = -np.mean(np.sum(y_train * np.log(activations[-1] + 1e-8), axis=1))
         loss = -np.mean(np.sum(y_batch * np.log(activations[-1] + 1e-8), axis=1))
+
         val_acc = compute_accuracy(x_test, y_test, weights, biases, config.activation)
-
-        # Update best validation accuracy
-        if val_acc > best_val_acc:
-            best_val_acc = val_acc
-
-        wandb.log({"epoch": epoch, "loss": loss, "val_acc": val_acc, "best_val_acc": best_val_acc})
-        
-       # wandb.log({"epoch": epoch, "loss": loss, "val_acc": val_acc})
+        wandb.log({"epoch": epoch, "loss": loss, "val_acc": val_acc})
     
     return weights, biases
 
@@ -184,5 +173,5 @@ sweep_config = {
     }
 }
 
-sweep_id = wandb.sweep(sweep_config, project="DA6401_assign_1")
-wandb.agent(sweep_id, function=train, count=10)
+sweep_id = wandb.sweep(sweep_config, project="DA6401_assign_2")
+wandb.agent(sweep_id, function=train, count=5)

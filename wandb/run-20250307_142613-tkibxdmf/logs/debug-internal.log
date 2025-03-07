@@ -1,0 +1,16 @@
+{"time":"2025-03-07T14:26:13.8521881+05:30","level":"INFO","msg":"stream: starting","core version":"0.19.7","symlink path":"C:\\Users\\Amar\\Desktop\\MTech\\2nd sem\\DL\\assign_1\\da6401_assignment1\\wandb\\run-20250307_142613-tkibxdmf\\logs\\debug-core.log"}
+{"time":"2025-03-07T14:26:13.9633525+05:30","level":"INFO","msg":"created new stream","id":"tkibxdmf"}
+{"time":"2025-03-07T14:26:13.9633525+05:30","level":"INFO","msg":"stream: started","id":"tkibxdmf"}
+{"time":"2025-03-07T14:26:13.9633525+05:30","level":"INFO","msg":"handler: started","stream_id":"tkibxdmf"}
+{"time":"2025-03-07T14:26:13.9633525+05:30","level":"INFO","msg":"sender: started","stream_id":"tkibxdmf"}
+{"time":"2025-03-07T14:26:13.9633525+05:30","level":"INFO","msg":"writer: Do: started","stream_id":"tkibxdmf"}
+{"time":"2025-03-07T14:26:14.4664149+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-07T14:26:27.8977669+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-07T14:26:27.8983009+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-07T14:26:28.8796296+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-07T14:26:28.9041823+05:30","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 0-9, summary","runtime_seconds":0.0245527}],"total_operations":1}}
+{"time":"2025-03-07T14:26:30.2198031+05:30","level":"INFO","msg":"stream: closing","id":"tkibxdmf"}
+{"time":"2025-03-07T14:26:30.2202398+05:30","level":"INFO","msg":"handler: closed","stream_id":"tkibxdmf"}
+{"time":"2025-03-07T14:26:30.2202398+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":"tkibxdmf"}
+{"time":"2025-03-07T14:26:30.2202398+05:30","level":"INFO","msg":"sender: closed","stream_id":"tkibxdmf"}
+{"time":"2025-03-07T14:26:30.2202398+05:30","level":"INFO","msg":"stream: closed","id":"tkibxdmf"}
