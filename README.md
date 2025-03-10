@@ -1,7 +1,7 @@
 # DA6401_assignment1
 #### `Amar Kumar`  `(MA24M002)`
 #### `M.Tech (Industrial Mathematics and Scientific Computing)` `IIT Madras`
-
+##### For more detail go to [wandb project report](https://wandb.ai/amar74384-iit-madras/DA6401_assign_1/reports/Amar-s-DA6401-Assignment-1--VmlldzoxMTYyNzg1Mg)
 
 ## Problem Statement 
 In this assignment, you need to implement a feedforward neural network and write the backpropagation code for training the network. We strongly recommend using numpy for all matrix/vector operations. You are not allowed to use any automatic differentiation packages. This network will be trained and tested using the Fashion-MNIST dataset. Specifically, given an input image (28 x 28 = 784 pixels) from the Fashion-MNIST dataset, the network will be trained to classify the image into 1 of 10 classes.
@@ -191,57 +191,19 @@ I am not able to achieve **95% accuracy**, but got **88.8% accuracy** with the f
 ### Question 7: Confusion Matrix for Best Run
 `code7.py` logs, the confusion matrix for the best-performing model identified from **500 run** on the Fashion-MNIST dataset, to wandb.
 
-## Requirements
-Ensure you have the following installed:
-- Python 3.8+
-- NumPy
-- WandB
-- Matplotlib
-- Seaborn
-- Scikit-learn
-
-
-To run the script:
+#### Steps
+- Go to `Projects/DA6401_assign_1/Sweeps`
+- Find the **run with the highest `val_acc`** ( sort the run in descending order inside the column `val_acc`).
+- Go to the **overview** of that run
+- Copy the configuration parameter
+- Paste it inside the `best_run.py` and save it
+-run the script:
 ```terminal
 python code7.py
 ```
 
-### Expected Outputs
-- **Test Accuracy**: Computed on the Fashion-MNIST dataset.
-- **Confusion Matrix**: Logged and visualized using `wandb`.
-
-### WandB Logging
-- The script initializes a `wandb` run with the best hyperparameters.
-- Each epoch logs:
-  - Training Loss
-  - Training Accuracy
-  - Validation Loss
-  - Validation Accuracy
-- The confusion matrix is logged after training.
-
-## Configuration
-The script automatically imports the best hyperparameters from `best_run_config`:
-- Number of hidden layers
-- Batch size
-- Activation function
-- Optimizer
-- Learning rate
-- Weight initialization method
-- Weight decay
-
-## Results Interpretation
-- The test accuracy gives insight into how well the model generalizes.
-- The confusion matrix highlights misclassifications, helping in performance analysis.
-
-## Notes
-- Ensure the Fashion-MNIST dataset (`fashion-mnist.npz`) is available in the directory.
-- The script runs directly without using a `wandb` sweep.
-
-For any modifications, update `best_run_config.py` to change hyperparameters before running the script.
-
-
-
-
+#### Outputs
+It automatically logs the confusion matrix for the best run to the wandb.
 
 
 ### Question 8: Comparing Cross-Entropy Loss with Squared Error Loss
@@ -285,6 +247,30 @@ python train.py --wandb_project my_project --wandb_entity my_entity --dataset mn
                 --learning_rate 0.01 --num_layers 2 --hidden_size 128 --activation ReLU
 ```
 
+#### Supported Arguments  
+
+| Name | Default Value | Description |  
+|------|--------------|-------------|  
+| `-wp`, `--wandb_project` | `myprojectname` | Project name used to track experiments in Weights & Biases dashboard. |  
+| `-we`, `--wandb_entity` | `myname` | WandB Entity used to track experiments in the Weights & Biases dashboard. |  
+| `-d`, `--dataset` | `fashion_mnist` | Choices: `["mnist", "fashion_mnist"]` |  
+| `-e`, `--epochs` | `1` | Number of epochs to train the neural network. |  
+| `-b`, `--batch_size` | `4` | Batch size used to train the neural network. |  
+| `-l`, `--loss` | `cross_entropy` | Choices: `["mean_squared_error", "cross_entropy"]` |  
+| `-o`, `--optimizer` | `sgd` | Choices: `["sgd", "momentum", "nag", "rmsprop", "adam", "nadam"]` |  
+| `-lr`, `--learning_rate` | `0.1` | Learning rate used to optimize model parameters. |  
+| `-m`, `--momentum` | `0.5` | Momentum used by momentum and nag optimizers. |  
+| `-beta`, `--beta` | `0.5` | Beta used by RMSprop optimizer. |  
+| `-beta1`, `--beta1` | `0.5` | Beta1 used by Adam and Nadam optimizers. |  
+| `-beta2`, `--beta2` | `0.5` | Beta2 used by Adam and Nadam optimizers. |  
+| `-eps`, `--epsilon` | `0.000001` | Epsilon used by optimizers. |  
+| `-w_d`, `--weight_decay` | `0.0` | Weight decay used by optimizers. |  
+| `-w_i`, `--weight_init` | `random` | Choices: `["random", "Xavier"]` |  
+| `-nhl`, `--num_layers` | `1` | Number of hidden layers used in the feedforward neural network. |  
+| `-sz`, `--hidden_size` | `4` | Number of hidden neurons in a feedforward layer. |  
+| `-a`, `--activation` | `sigmoid` | Choices: `["identity", "sigmoid", "tanh", "ReLU"]` |  
+
+
 ## Final Thoughts
 This assignment explored deep learning on the **Fashion-MNIST** dataset using a **fully connected neural network** implemented from scratch with **NumPy**. Several key aspects were covered, including:
 
@@ -304,7 +290,7 @@ This assignment explored deep learning on the **Fashion-MNIST** dataset using a 
   - Training and testing datasets were properly **split and randomized** to prevent data leakage.
   - The code is **fully documented** and adheres to ethical ML practices (no data cheating).
 
-Overall, this assignment provides a strong foundation for **neural network training, evaluation, and optimization**. Future improvements could include **CNNs for better feature extraction, advanced regularization techniques, or larger-scale hyperparameter tuning**.
+Overall, this assignment provides a strong foundation for **neural network training, evaluation, and optimization**.
 
 
 ### Self Declaration 
