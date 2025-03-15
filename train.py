@@ -6,7 +6,6 @@ from tensorflow.keras.datasets import fashion_mnist, mnist
 # importing from local directory 
 from propagation import forward_propagation, backpropagation
 from optimizers import optimizers
-from sweep_config import sweep_config
 
 # Argument Parser
 def get_args():
@@ -38,7 +37,7 @@ def load_dataset(name):
     elif name == "mnist":
         (x_train, y_train), (x_test, y_test) = mnist.load_data()
     else:
-        return load_data("fashion-mnist.npz")  # Load from .npz file
+        return load_data("fashion-mnist.npz")  # Loading from .npz file
 
     x_train, x_test = preprocess_data(x_train, y_train)
     y_train, y_test = np.eye(10)[y_train], np.eye(10)[y_test]  # One-hot encoding
@@ -53,7 +52,7 @@ def load_data(filepath):
 
 def preprocess_data(x, y):
     x = x.reshape(x.shape[0], -1) / 255.0  # Normalize and flatten
-    y_one_hot = np.eye(10)[y]  # Convert labels to one-hot encoding
+    y_one_hot = np.eye(10)[y]  # Converting labels to one-hot encoding
     return x, y_one_hot
 
 # Xavier Initialization
@@ -65,7 +64,7 @@ def initialize_network(layer_sizes):
         biases.append(np.zeros((1, layer_sizes[i + 1])))
     return weights, biases
 
-# Compute Accuracy
+# Compute Accuracy Function
 def compute_accuracy(x, y, weights, biases, activation):
     activations, _ = forward_propagation(x, weights, biases, activation)
     predictions = np.argmax(activations[-1], axis=1)
@@ -88,11 +87,11 @@ def train_network(x_train, y_train, x_val, y_val, layer_sizes, optimizer_name, e
         for i in range(0, x_train.shape[0], batch_size):
             x_batch = x_train[i:i + batch_size]
             y_batch = y_train[i:i + batch_size]
-            activations, z_values = forward_propagation(x_batch, weights, biases, activation)  # ✅ FIXED
+            activations, z_values = forward_propagation(x_batch, weights, biases, activation) 
             gradients_w, gradients_b = backpropagation(activations, z_values, weights, y_batch, activation)
             optimizer.update(weights, biases, gradients_w, gradients_b)
         
-        train_activations, _ = forward_propagation(x_train, weights, biases, activation)  # ✅ FIXED
+        train_activations, _ = forward_propagation(x_train, weights, biases, activation)  
         loss = -np.mean(np.sum(y_train * np.log(train_activations[-1] + 1e-8), axis=1))
         val_acc = compute_accuracy(x_val, y_val, weights, biases, activation)
         
