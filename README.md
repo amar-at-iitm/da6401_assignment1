@@ -135,11 +135,11 @@ train_network(x_train, y_train, x_test, y_test, [784, 128, 64, 10], optimizer_na
 The hyperparameters are tuned using the `wandb.sweep()` functionality. Given the large search space, we use **Bayesian Optimization** as our search strategy to efficiently explore promising configurations while minimizing redundant trials.
 
 #### Hyperparameters Considered:
-- **Epochs:** 5, 10
-- **Hidden Layers:** 3, 4, 5
-- **Hidden Layer Size:** 32, 64, 128
+- **Epochs:** 5, 8, 10
+- **Hidden Layers:** 2, 3, 4, 5, 6
+- **Hidden Layer Size:** 16, 32, 64, 128
 - **Weight Decay (L2 Regularization):** 0, 0.0005, 0.5
-- **Learning Rate:** 1e-3, 1e-4
+- **Learning Rate:** 0, 1e-5, 1e-4, 1e-6, 1e-3
 - **Optimizer:** SGD, Momentum, Nesterov, RMSprop, Adam, Nadam
 - **Batch Size:** 16, 32, 64
 - **Weight Initialization:** Random, Xavier
@@ -157,7 +157,7 @@ The hyperparameters are tuned using the `wandb.sweep()` functionality. Given the
 
 #### WandB Integration
 - Each run is uniquely named based on key hyperparameters (e.g., `run_hl-3_bs-16_act-tanh_opt-adam`).
-- Sweeps are created using `wandb.sweep()` with `count=500` to explore 500 configurations.
+- Sweeps are created using `wandb.sweep()` with `count=100` to explore 100 configurations.
 - Training performance metrics (loss, accuracy) are logged and visualized.
 
 #### Running the Sweep
@@ -174,7 +174,7 @@ It will automatically handle everything.
 - A learning rate of `1e-3` works well with Adam, while `1e-4` is preferred for SGD-based optimizers.
 
 #### Recommended Configuration
-I am not able to achieve **95% accuracy**, but got **88.8% accuracy** with the following setup:
+I am not able to achieve **95% accuracy**, but got **88.95% accuracy** with the following setup:
 
 - **activation:"sigmoid"**
 - **batch_size:32**
@@ -189,7 +189,7 @@ I am not able to achieve **95% accuracy**, but got **88.8% accuracy** with the f
 
 
 ### Question 7: Confusion Matrix for Best Run
-`code7.py` logs, the confusion matrix for the best-performing model identified from **500 run** on the Fashion-MNIST dataset, to wandb.
+`code7.py` logs, the confusion matrix for the best-performing model identified from **100 run** on the Fashion-MNIST dataset, to wandb.
 
 #### Steps
 - Go to `Projects/DA6401_assign_1/Sweeps`
@@ -228,7 +228,7 @@ Github link
 
 
 ### Question 10: MNIST Experimentation and Training with Various Hyperparameters
-From the **500 runs** of `code4.py`, I picked the 3 runs with the highest validation accuracy. From the wandb run **overview** got the configuration parameters and then applied them to **MINIST** dataset using `train.py` and logged the result to **wandb**.
+From the final **100 runs** of `code4.py`, I picked the 3 runs with the highest validation accuracy. From the wandb run **overview** got the configuration parameters and then applied them to **MINIST** dataset using `train.py` and logged the result to **wandb**.
 
 
 ### `train.py` Specification
@@ -238,13 +238,19 @@ From the **500 runs** of `code4.py`, I picked the 3 runs with the highest valida
 - Configurable training hyperparameters
 - Weights & Biases (WandB) integration for experiment tracking
 
+#### ** Steps to run the train.py**
+- Pick any run
+- Copy its **config parameter** from the wandb run overview and paste them in `command_generator.py`.
+- run `python command_generator.py`: 
+
+Output: `python train.py --wandb_project DA6401_assign_1 --wandb_entity amar74384-iit-madras --dataset mnist --activation tanh --batch_size 32 --epochs 10 --hidden_layers 5 --hidden_size 128 --learning_rate 0.001 --optimizer nadam --weight_decay 0 --weight_init xavier`
+
+- Then paste the output in the terminal and hit enter
 
 #### Command-line Arguments
 The `train.py` script accepts several command-line arguments for training configuration. Example usage:
 ```terminal
-python train.py --wandb_project my_project --wandb_entity my_entity --dataset mnist \
-                --epochs 10 --batch_size 32 --loss cross_entropy --optimizer adam \
-                --learning_rate 0.01 --num_layers 2 --hidden_size 128 --activation ReLU
+python train.py --wandb_project DA6401_assign_1 --wandb_entity amar74384-iit-madras --dataset mnist --activation tanh --batch_size 32 --epochs 10 --hidden_layers 5 --hidden_size 128 --learning_rate 0.001 --optimizer nadam --weight_decay 0 --weight_init xavier
 ```
 
 #### Supported Arguments  
