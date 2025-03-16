@@ -12,7 +12,7 @@ In this assignment, you need to implement a feedforward neural network and write
 
 # Fashion-MNIST Neural Network from Scratch
 
-This assignment implements a **fully connected neural network** for **Fashion-MNIST classification** using only **NumPy, Pandas**. The code is modular, optimized using **WandB sweeps**, and follows best software engineering practices.
+This assignment implements a **fully connected neural network** for **Fashion-MNIST classification** using only **NumPy, Pandas**. The code is modular, optimized using **WandB sweeps** and follows best software engineering practices.
 ### Key Features
 - **Custom Neural Network Implementation:** Built from scratch with forward propagation, backpropagation, and optimizers.
 - **Hyperparameter Optimization:** Utilized **WandB sweeps** to identify the best model.
@@ -21,18 +21,23 @@ This assignment implements a **fully connected neural network** for **Fashion-MN
 - **Proper Data Handling:** Ensured **randomized train-test splits** and ethical ML practices.
 
 ### File Structure
+- `activation.py` - All the activation functions and their derivative.
+- `best_run.py` - Stores the best hyperparameter configuration.
 - `code1.ipynb` – Tests the best model and plots the confusion matrix.
 - `code2.ipynb` – Compares cross-entropy loss with squared error loss.
 - `code3.py` – Tests the best model and plots the confusion matrix.
 - `code4.py` – Compares cross-entropy loss with squared error loss.  
 - `code7.py` – Tests the best model and plots the confusion matrix.
 - `code8.py` – Compares cross-entropy loss with squared error loss.
-- `train.py` – Main script for training the best model.
-- `optimizers.py` – Implementations of various optimizers.
 - `propagation.py` – Forward and backward propagation functions.
+- `functions.py` - Stores all the important functions used in the assignment.
+- `optimizers.py` – Implementations of various optimizers.
 - `sweep_config.py` – Configuration file for hyperparameter tuning.
-- `best_run.py` – Stores the best hyperparameter configuration.
-- `fashion-mnist.npz` – The dataset used for training and evaluation.
+- `command_generator.py` - Generates command to run `train.py`.
+- `train.py` – Main script for training the best model.
+- `tens.py` - Stores mnist dataset in the local directory.
+- `fashion-mnist.npz` – The fashion-mnist dataset in the local directory, used for training and evaluation.
+- `mnist.npz` - the mnist dataset in the local directory.
 
 
 ### Installation & Setup
@@ -43,7 +48,7 @@ This assignment implements a **fully connected neural network** for **Fashion-MN
    ```
 2. Install required dependencies:
    ```bash
-   pip install numpy wandb tensorflow
+   pip install -r requirements.txt
    ```
 3. Configure WandB:
    ```bash
