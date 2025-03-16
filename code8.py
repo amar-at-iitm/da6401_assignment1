@@ -19,7 +19,7 @@ def compute_loss(y_true, y_pred, loss_type):
 
 # Training Function
 def train():
-    wandb.init(entity="amar74384-iit-madras", project="DA6401_assign_2") 
+    wandb.init(entity="amar74384-iit-madras", project="DA6401_assign_1") 
     
     config = wandb.config
     run_name = f"hl-{config.hidden_layers}_bs-{config.batch_size}_act-{config.activation}_opt-{config.optimizer}"
@@ -73,5 +73,5 @@ def train():
     return weights, biases
 
 # Run W&B sweep
-sweep_id = wandb.sweep(sweep_config, project="DA6401_assign_2")
-wandb.agent(sweep_id, function=train, count=2)
+sweep_id = wandb.sweep(sweep_config, project="DA6401_assign_1")
+wandb.agent(sweep_id, function=train, count=50)
