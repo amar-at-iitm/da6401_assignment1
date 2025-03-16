@@ -1,41 +1,17 @@
 import numpy as np
 import wandb
 from sklearn.metrics import confusion_matrix
-from copy import deepcopy
 import matplotlib
 matplotlib.use("Agg")  # Set non-GUI backend
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Importing from local directory
+from functions import load_data, preprocess_data, initialize_network, compute_accuracy
 from optimizers import optimizers
-from best_run import best_run_config  # Importing best run config instead of sweep_config
 from propagation import forward_propagation, backpropagation
+from best_run import best_run_config  # Importing best run config instead of sweep_config
 
-# Loading and Preprocessing Fashion-MNIST Dataset
-def load_data(filepath):
-    with np.load(filepath) as data:
-        x_train, y_train = data['x_train'], data['y_train']
-        x_test, y_test = data['x_test'], data['y_test']
-    return (x_train, y_train), (x_test, y_test)
-
-def preprocess_data(x, y):
-    x = x.reshape(x.shape[0], -1) / 255.0  # Normalizing and flattening
-    y_one_hot = np.eye(10)[y]  # Converting labels to one-hot encoding
-    return x, y_one_hot
-
-# Initializing The Network
-def initialize_network(layer_sizes, init_method):
-    weights = []
-    biases = []
-    for i in range(len(layer_sizes) - 1):
-        if init_method == "xavier":
-            limit = np.sqrt(6 / (layer_sizes[i] + layer_sizes[i + 1]))
-        else:  # Random initialization
-            limit = 0.1
-        weights.append(np.random.uniform(-limit, limit, (layer_sizes[i], layer_sizes[i + 1])))
-        biases.append(np.zeros((1, layer_sizes[i + 1])))
-    return weights, biases
 
 def log_confusion_matrix(x_test, y_test, model_weights, model_biases, activation, title="Confusion Matrix"):
     activations, _ = forward_propagation(x_test, model_weights, model_biases, activation)
@@ -54,20 +30,16 @@ def log_confusion_matrix(x_test, y_test, model_weights, model_biases, activation
     wandb.log({title: wandb.Image(plt)})
     plt.close()
 
-def compute_accuracy(x, y, weights, biases, activation):
-    activations, _ = forward_propagation(x, weights, biases, activation)
-    predictions = np.argmax(activations[-1], axis=1)
-    y_labels = np.argmax(y, axis=1)
-    return np.mean(predictions == y_labels)
 
 def train():
-    wandb.init(entity="amar74384-iit-madras", project="DA6401_assign_2", config=best_run_config)  # Using best run config
+    wandb.init(entity="amar74384-iit-madras", project="DA6401_assign_1", config=best_run_config)  # Using best run config
     
     config = wandb.config
 
-    run_name = f"run_hl-{config.hidden_layers}_bs-{config.batch_size}_act-{config.activation}_opt-{config.optimizer}"
+    run_name = f"load_confusion_matrix"
     wandb.run.name = run_name
     wandb.run.save()
+    
     
     (x_train, y_train), (x_test, y_test) = load_data('fashion-mnist.npz')
     x_train, y_train = preprocess_data(x_train, y_train)
@@ -96,7 +68,7 @@ def train():
             y_batch = y_train[i:i + config.batch_size]
             
             activations, z_values = forward_propagation(x_batch, weights, biases, config.activation)
-            gradients_w, gradients_b = backpropagation(activations, z_values, weights, y_batch, config.activation)
+            gradients_w, gradients_b = backpropagation(activations, z_values, weights, y_batch, config.activation, config.weight_decay)
             optimizer.update(weights, biases, gradients_w, gradients_b)
             
             batch_loss = -np.mean(np.sum(y_batch * np.log(activations[-1] + 1e-8), axis=1))
@@ -118,4 +90,4 @@ def train():
         
     return weights, biases
 
-train()  # Directly calling train without using wandb sweep
+train() 
