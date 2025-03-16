@@ -1,5 +1,5 @@
 sweep_config = {
-    "method": "random",
+    "method": "bayes",
     "metric": {"name": "val_acc", "goal": "maximize"},
     "parameters": {
         "epochs": {"values": [5, 8, 10]},

@@ -4,11 +4,11 @@
 best_run_config = {
     "activation": "tanh",
     "batch_size": 32,
-    "epochs": 5,
+    "epochs": 10,
     "hidden_layers": 5,
-    "hidden_size": 64,
+    "hidden_size": 128,
     "learning_rate": 0.001,
     "optimizer": "nadam",
-    "weight_decay": 0.0005,
+    "weight_decay": 0,
     "weight_init": "xavier"
 }
